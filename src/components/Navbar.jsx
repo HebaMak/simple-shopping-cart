@@ -6,7 +6,7 @@ const Navbar = () => {
       <div className="container navContainer">
         <div className="logo">
           <img src="https://res.cloudinary.com/hapiii/image/upload/v1647783503/eCommerce%20images/tv592sdvhcrz2bch9zwl.jpg" alt="logo" />
-          <span>Hapiii clothes</span>
+          <span>Hapiii shopping</span>
         </div>
         <div className="links">
           <NavLink to='/'>Home</NavLink>
