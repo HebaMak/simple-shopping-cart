@@ -1,38 +1,244 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 60%;
+  margin: auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* App page  */
+.wrapper {
+  margin: 40px;
+  display: grid;
+  row-gap: 20px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+/* navbar page */
+.navbar {
+  background-color: rgb(253, 253, 191) ;
+  margin-bottom: 30px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+}
+.navContainer {
+  display: flex;
+  height: 50px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navContainer .logo {
+  height: 100%;
+  width: 40%;
+  text-align: left;
+}
+
+.navContainer .logo img {
+  width: 40px;
+}
+
+.navContainer .logo span {
+  position: absolute;
+  line-height: 50px;
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+.navContainer .links {
+  text-align: right;
+  width: 60%
+}
+
+.navbar .links a {
+  text-decoration: none;
+  color: #bb7250;
+  font-weight: 700;
+  letter-spacing: .5px;
+  margin-right: 50px;
+}
+
+.navbar a:hover ,
+.navbar a.active {
+  color: #8d553a;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+/* Cart page */
+.cart {
+  text-align: center;
+  margin-top: 70px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 30px 0;
+}
+
+.cart .productsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Products page */
+.products {
+  text-align: center;
+  margin-top: 70px;
+}
+
+.products .title {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.products .productsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Product pag */
+.product {
+  display: flex;
+  align-items: flex-end;
+  width: 240px;
+  height: 340px;
+  border-radius: 20px;
+  box-shadow: 0px 20px 40px rgba(52, 53, 99, 0.2),
+  0px 1px 3px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30px;
+  margin-left: 30px;
+}
+
+.product img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.product .addButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  font-size: 25px;
+  line-height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
   color: white;
+  background-color: #60c95d;
 }
 
-.App-link {
-  color: #61dafb;
+.product .addButton.red {
+  background-color: red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.product .addButton:hover {
+  transform: scale(1.2);
+  transition: 1s;
+}
+
+.product .details {
+  display: grid;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  width: 100%;
+  padding: 20px;
+}
+
+.details .title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  margin: 0;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0px;
+}
+
+.details .price {
+  font-weight: normal;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0px;
+}
+
+
+
+/* media query  */
+@media (max-width:  575px) { 
+  .container {
+    width: 90%;
   }
-  to {
-    transform: rotate(360deg);
+  .navContainer .logo span {
+    font-size: 18px;
+  }
+  .cart {
+    margin-top: 80px;
+  }
+  .cart .productsWrapper {
+    justify-content: space-around;
+  }
+  .products {
+    margin-top: 80px;
+  }
+  .products .title {
+    font-size: 22px;
+  }
+  .products .productsWrapper {
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 765px) { 
+  .container {
+    width: 80%;
+  }
+  .navContainer .logo span {
+    font-size: 18px;
+  }
+  .cart {
+    margin-top: 80px;
+  }
+  .cart .productsWrapper {
+    justify-content: space-around;
+  }
+  .products {
+    margin-top: 80px;
+  }
+  .products .title {
+    font-size: 23px;
+  }
+  .products .productsWrapper {
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 766px) and (max-width: 991px) {
+  .container {
+    width: 80%;
+  }
+  .cart {
+    margin-top: 80px;
+  }
+  .products {
+    margin-top: 80px;
   }
 }
